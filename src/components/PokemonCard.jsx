@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
 
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
 
-function PokemonCard() {
-  const [pokemon, pokemon1] = useState(pokemonList[0]);
-
-  function nextPokemon() {
-   pokemon1(pokemonList[1]);
-  } 
+function PokemonCard(props) {
+console.log(props)
 
     return(
       <figure>
-        {pokemon.imgSrc ? (<img src={pokemon.imgSrc} alt={pokemon.name}/>)
+        {props.pokemon.imgSrc ? (<img src={props.pokemon.imgSrc} alt={props.pokemon.name}/>)
         : (<p>???</p>)}
-        <figcaption>{pokemon.name}</figcaption>
-        <button onClick={nextPokemon}>next pokemon</button>
+        <figcaption>{props.pokemon.name}</figcaption>
         </figure>);
+
+
 }
-  
+
   export default PokemonCard;
