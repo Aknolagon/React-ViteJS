@@ -1,24 +1,16 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 function NavBar (props) {
+    const {pokemonList, setPokemonIndex} = props
 
     return (
-        <div>
-        {props.pokemonIndex > 0 && <button onClick={props.handleClickPrevious}>Previous</button>
-            }
-            {props.pokemonIndex < props.pokemon.length - 1 && <button onClick={props.handleClickNext}>Next</button>
-            }
-        </div>
-)   
-}
-
-
-NavBar.propTypes = {
-    pokemon : PropTypes.shape({
-    pokemonIndex : PropTypes.string.isRequired,
-    handleClickPrevious : PropTypes.func.isRequired,
-    handleClickNext: PropTypes.func.isRequired,
-    }).isRequired,
+        <>
+        {pokemonList.map((pokemon, index) => (
+          <button key= {index} onClick={() => setPokemonIndex(index)}>{pokemon.name}</button>
+            ))}
+        </>
+);
 }
 
 export default NavBar;
