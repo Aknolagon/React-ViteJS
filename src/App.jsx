@@ -13,7 +13,7 @@ const pokemonList = [
 ];
 
 function App() {
-  const pokemon = pokemonList[1];
+  const pokemon = pokemonList[0];
 
 
   return (
@@ -24,7 +24,5 @@ function App() {
     </>
   );
 }
-
-
 
 export default App;
