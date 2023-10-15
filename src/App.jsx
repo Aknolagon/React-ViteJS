@@ -1,7 +1,8 @@
 import PokemonCard from "./components/PokemonCard.jsx"
 import React, { useState } from 'react';
 import NavBar from "./components/NavBar.jsx";
-import PropTypes from "prop-types";
+import "./App.css";
+import { useEffect } from "react";
 
 const pokemonList = [
   {
@@ -26,6 +27,7 @@ const pokemonList = [
     },
     {
       name: "mew",
+      imgSrc: "",
     },
   ];
 
@@ -36,6 +38,12 @@ function App() {
 
   const pokemon = pokemonList[pokemonIndex];
 
+  useEffect(
+    () => {
+      alert(`Hello pokemon trainer :)`);
+    },
+    []
+  );
   return (
     <>
       <PokemonCard pokemon={pokemon}/>    
